@@ -1,0 +1,70 @@
+.wrapper{
+    height:75%;
+    width: 30%;
+    background-color: rgb(182, 178, 178);
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+   
+
+}
+
+
+.display{
+    
+    width: 80%;
+    height: 20%;
+    margin: 10px auto;
+    background-color: white;
+    float: top;
+    display: flex;
+    justify-content: right;
+    align-items:flex-end;
+    border-radius: 5%;
+}
+.numbers{
+    margin: 5px;
+    font-size:xx-large;
+}
+
+.keypad{
+   
+    position: absolute;
+    top: 75;
+    bottom: 0;
+    height: 75%;
+    width: 90%;
+    margin-left: 20px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+
+}
+
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.number{
+    font-size: 40pt;
+    width: 40px;
+    border: solid 1px black;
+    text-align: center;
+}
+
+.otherBtns{
+    font-size: 20pt; 
+    width: 40px;
+    border: solid 1px black;
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+}
+
+
+
