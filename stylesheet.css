@@ -5,6 +5,7 @@
     border-radius: 10px;
     position: relative;
     display: flex;
+    border: 10px solid black;
    
 
 }
@@ -21,6 +22,8 @@
     justify-content: right;
     align-items:flex-end;
     border-radius: 5%;
+    border: 10px solid black;
+
 }
 .numbers{
     margin: 5px;
@@ -40,7 +43,6 @@
     flex-direction: column;
     justify-content: space-evenly;
 
-
 }
 
 
@@ -53,17 +55,21 @@
 .number{
     font-size: 40pt;
     width: 40px;
-    border: solid 1px black;
+    border: solid 5px black;
     text-align: center;
+    border-radius: 30%;
 }
 
 .otherBtns{
     font-size: 20pt; 
     width: 40px;
-    border: solid 1px black;
+    border: solid 5px black;
     text-align: center;
     width: fit-content;
     height: fit-content;
+    border-radius: 10;
+    border-radius: 30%;
+
 }
 
 
