@@ -23,18 +23,18 @@ allOperations.forEach((operation) => operation.addEventListener('click', (event)
 
 //add a listener to the del and the AC buttons now:~
 let delButton = document.querySelector(".delButton");
-delButton.addEventListener("click", (event)=>{
+delButton.addEventListener("click", (event) => {
     let display = document.querySelector(".numbers");
     let calculationEnteredByTheUser = display.innerHTML;
     let operands = calculationEnteredByTheUser.split('');
-    operands.splice(operands.length-1,1);
-    let displayAfterDelete= "";
-    operands.forEach(num => displayAfterDelete=displayAfterDelete+num);
+    operands.splice(operands.length - 1, 1);
+    let displayAfterDelete = "";
+    operands.forEach(num => displayAfterDelete = displayAfterDelete + num);
     displayAnswer(displayAfterDelete);
 });
 
 let ACButton = document.querySelector(".ACButton");
-ACButton.addEventListener("click", (event)=>{
+ACButton.addEventListener("click", (event) => {
     displayAnswer("");
 });
 
@@ -53,28 +53,42 @@ operationCalculate.addEventListener('click', (event) => {
     let display = document.querySelector(".numbers");
     let calculationEnteredByTheUser = display.innerHTML;
     let operands = calculationEnteredByTheUser.split(operationPressed);
-    console.log(operands[0]);
-    console.log(operands[1]);
-    console.log(operationPressed);
-    //convert the strings into numbers, and then make a switch case and update the dom.
+    console.log(operands);
 
-    let firstOperandConvertedToNumber = parseInt(operands[0]);
-    let secondOperandConvertedToNumber = parseInt(operands[1]);
+    let firstOperandConvertedToNumber=0;
+    let secondOperandConvertedToNumber=0;
+    //convert the strings into numbers, and then make a switch case and update the dom.
+    if(!(operands[0].includes(".") || operands[1].includes("."))){
+        console.log("none of the operands contains decimal")
+         firstOperandConvertedToNumber = parseInt(operands[0]);
+         secondOperandConvertedToNumber = parseInt(operands[1]);
+    }
+    else{
+        if((operands[0].includes("."))){
+         firstOperandConvertedToNumber = parseFloat(operands[0]);
+         secondOperandConvertedToNumber = parseInt(operands[1]);
+        }
+        else{
+        firstOperandConvertedToNumber = parseInt(operands[0]);
+        secondOperandConvertedToNumber = parseFloat(operands[1]);
+        }
+    }
 
     switch (operationPressed) {
         case '+':
             displayAnswer(firstOperandConvertedToNumber + secondOperandConvertedToNumber)
             break;
         case '-':
-            displayAnswer( firstOperandConvertedToNumber - secondOperandConvertedToNumber)
+            displayAnswer(firstOperandConvertedToNumber - secondOperandConvertedToNumber)
             break;
         case 'x':
             displayAnswer(firstOperandConvertedToNumber * secondOperandConvertedToNumber)
+            break;
+        case '/':
+            displayAnswer(firstOperandConvertedToNumber / secondOperandConvertedToNumber)
             break;
         default:
             console.log(`Sorry, we are out of ${expr}.`);
     }
 
-})
-
-
+});

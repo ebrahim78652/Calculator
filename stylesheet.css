@@ -11,10 +11,9 @@
 
 .mainKeypadAndExtraButtons{
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    flex-direction: row;
     margin: 10px;
-    height: 80%
+    height: 80%;
 }
 
 
@@ -62,9 +61,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-   
-
-
 }
 
 
@@ -94,5 +90,13 @@
 
 }
 
+.divisionAndDecimalPoint{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
 
+#/{
+    height:70%;
+}
 
