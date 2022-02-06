@@ -3,16 +3,22 @@
     width: 30%;
     background-color: rgb(182, 178, 178);
     border-radius: 10px;
-    position: relative;
     display: flex;
     border: 10px solid black;
-   
+    flex-direction: column;
 
+}
+
+.mainKeypadAndExtraButtons{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 10px;
+    height: 80%
 }
 
 
 .display{
-    
     width: 80%;
     height: 20%;
     margin: 10px auto;
@@ -49,17 +55,15 @@
 
 
 .keypad{
-   
-    position: absolute;
-    top: 75;
-    bottom: 0;
-    height: 75%;
+  
+    height: 100%;
     width: 90%;
-    margin-left: 20px;
     align-self: center;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+   
+
 
 }
 

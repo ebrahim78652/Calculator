@@ -21,6 +21,24 @@ allOperations.forEach((operation) => operation.addEventListener('click', (event)
     display.innerHTML = display.innerHTML + operationPressed;
 }))
 
+//add a listener to the del and the AC buttons now:~
+let delButton = document.querySelector(".delButton");
+delButton.addEventListener("click", (event)=>{
+    let display = document.querySelector(".numbers");
+    let calculationEnteredByTheUser = display.innerHTML;
+    let operands = calculationEnteredByTheUser.split('');
+    operands.splice(operands.length-1,1);
+    let displayAfterDelete= "";
+    operands.forEach(num => displayAfterDelete=displayAfterDelete+num);
+    displayAnswer(displayAfterDelete);
+});
+
+let ACButton = document.querySelector(".ACButton");
+ACButton.addEventListener("click", (event)=>{
+    displayAnswer("");
+});
+
+
 //function to display the answer on the calculator
 displayAnswer = function (answer) {
     let display = document.querySelector(".numbers");
@@ -56,7 +74,6 @@ operationCalculate.addEventListener('click', (event) => {
         default:
             console.log(`Sorry, we are out of ${expr}.`);
     }
-
 
 })
 
